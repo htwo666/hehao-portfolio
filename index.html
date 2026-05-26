@@ -3,282 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>何浩 - 个人作品集</title>
-    <link rel="stylesheet" href="style.css">
+    <title>何浩 · 个人作品集</title>
+    <link rel="stylesheet" href="style.css?v=2">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
 </head>
 <body>
-    <!-- 动态背景光晕 -->
-    <div class="bg-glow g1"></div>
-    <div class="bg-glow g2"></div>
-    <div class="bg-glow g3"></div>
-    <!-- 粒子画布 -->
-    <canvas id="particles"></canvas>
-
-    <div class="app-container">
-        <!-- 左侧：个人简介 -->
-        <aside class="sidebar">
-            <div class="profile-card">
-                <div class="avatar">
-                    <div style="width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#FF6B35,#f59e0b);display:flex;align-items:center;justify-content:center;font-size:3rem;color:white;font-weight:800;">浩</div>
-                </div>
-                <h1 class="name">何浩</h1>
-                <span class="title-badge">快手科技 · 企业社会责任部</span>
-                <p class="bio">用内容连接善意，让普通人帮助普通人。<br>项目策划与执行、内容运营、品牌传播、跨部门协同，294篇工作文档系统化输出。</p>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-item">
-                    <div class="contact-icon ci-purple">📧</div>
-                    <div>
-                        <div class="contact-label">邮箱</div>
-                        <div class="contact-value">hehao@kuaishou.com</div>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon ci-amber">🏢</div>
-                    <div>
-                        <div class="contact-label">公司</div>
-                        <div class="contact-value">快手科技 · CSR部</div>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon ci-cyan">💼</div>
-                    <div>
-                        <div class="contact-label">职位</div>
-                        <div class="contact-value">项目助理</div>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon ci-rose">📅</div>
-                    <div>
-                        <div class="contact-label">入职</div>
-                        <div class="contact-value">2023年8月</div>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon ci-green">🎯</div>
-                    <div>
-                        <div class="contact-label">定位</div>
-                        <div class="contact-value">用内容连接善意</div>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon ci-pink">📚</div>
-                    <div>
-                        <div class="contact-label">文档沉淀</div>
-                        <div class="contact-value">294篇</div>
-                    </div>
-                </div>
-            </div>
-        </aside>
-
-        <!-- 右侧：Tab 内容区 -->
-        <main class="content">
-            <!-- Tab 导航 -->
-            <nav class="tab-nav">
-                <button class="tab-btn active" data-tab="education">教育背景</button>
-                <button class="tab-btn" data-tab="career">工作经历</button>
-                <button class="tab-btn" data-tab="skills">核心能力</button>
-                <button class="tab-btn" data-tab="eval">工作理念</button>
+    <div class="app">
+        <!-- 顶部极简导航 -->
+        <header class="topbar">
+            <a href="#" class="nav-logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="15" fill="#1a1a2e"/>
+                        <circle cx="16" cy="15" r="6" fill="white"/>
+                        <ellipse cx="13.5" cy="14" rx="1.5" ry="2" fill="#1a1a2e"/>
+                        <ellipse cx="18.5" cy="14" rx="1.5" ry="2" fill="#1a1a2e"/>
+                        <rect x="13.5" y="18" width="5" height="1.5" rx="0.75" fill="#1a1a2e"/>
+                        <circle cx="10.5" cy="16" r="1.2" fill="#ffb3c1" opacity="0.6"/>
+                        <circle cx="21.5" cy="16" r="1.2" fill="#ffb3c1" opacity="0.6"/>
+                    </svg>
+                </a>
+            <nav class="tabs">
+                <button class="tab active" data-tab="about">关于我</button>
+                <button class="tab" data-tab="education">教育背景</button>
+                <button class="tab" data-tab="career">工作经历</button>
+                <button class="tab" data-tab="skills">核心能力</button>
+                <button class="tab" data-tab="explore">学习与探索</button>
             </nav>
+        </header>
 
-            <!-- 教育背景 -->
-            <div id="tab-education" class="tab-panel active">
-                <div class="content-card">
-                    <h3 class="card-school">华北理工大学</h3>
-                    <p class="card-major">新能源科学与工程 · 本科 &nbsp;|&nbsp; 2019 - 2023</p>
-                    <div class="grades-box">
-                        <p class="grades-title">核心能力指标</p>
-                        <p class="grades">
-                            <span>项目策划与执行 <b>90+篇</b></span>
-                            <span>内容运营审核 <b>78条</b></span>
-                            <span>品牌传播设计 <b>7个H5</b></span>
-                            <span>跨部门协作 <b>4方联合</b></span>
-                            <span>数据复盘 <b>294篇</b></span>
-                            <span>预算优化 <b>30%</b></span>
-                            <span>基金会评级 <b>90%</b></span>
-                        </p>
+        <!-- 内容区 -->
+        <main class="main">
+            <!-- ===== 关于我 ===== -->
+            <div class="panel active" id="panel-about">
+                <div class="about-layout">
+                    <div class="about-text">
+                        <p class="about-greeting">👋 你好，我是</p>
+                        <h1>何浩</h1>
+                        <p class="about-role">快手科技 · 企业社会责任部 · 项目助理</p>
+                        <p class="about-bio">用内容连接善意，让普通人帮助普通人。项目策划与执行、内容运营、品牌传播、跨部门协同，294篇工作文档系统化输出。</p>
+                        <div class="about-info">
+                            <span>📍 北京</span>
+                            <span>🎂 24岁</span>
+                            <span>👨‍💼 hehao@kuaishou.com</span>
+                        </div>
+                        <div class="about-contact">
+                            <span>快手公益基金会</span>
+                            <span>2023年8月入职</span>
+                        </div>
+                    </div>
+                    <div class="about-photo">
+                        <svg class="line-art" viewBox="0 0 280 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="150" y="210" width="85" height="60" rx="6" fill="white" stroke="#1a1a2e" stroke-width="2.5"/>
+                            <rect x="165" y="225" width="55" height="35" rx="2" fill="rgba(99,102,241,0.08)"/>
+                            <rect x="172" y="232" width="28" height="3" rx="1" fill="rgba(99,102,241,0.3)"/>
+                            <rect x="172" y="240" width="38" height="3" rx="1" fill="rgba(99,102,241,0.2)"/>
+                            <rect x="172" y="248" width="20" height="3" rx="1" fill="rgba(99,102,241,0.15)"/>
+                            <rect x="185" y="270" width="15" height="4" rx="2" fill="#1a1a2e"/>
+                            <rect x="178" y="274" width="29" height="5" rx="3" fill="#1a1a2e"/>
+                            <rect x="130" y="278" width="130" height="8" rx="4" fill="white" stroke="#1a1a2e" stroke-width="2"/>
+                            <rect x="155" y="286" width="6" height="55" rx="2" fill="#1a1a2e" opacity="0.3"/>
+                            <rect x="230" y="286" width="6" height="55" rx="2" fill="#1a1a2e" opacity="0.3"/>
+                            <circle cx="120" cy="190" r="30" fill="white" stroke="#1a1a2e" stroke-width="2.5"/>
+                            <path d="M90 185 Q90 155 120 158 Q150 155 150 185" fill="#1a1a2e"/>
+                            <path d="M90 185 Q90 170 95 165 Q98 162 100 168 Q100 175 90 185" fill="#1a1a2e"/>
+                            <rect x="98" y="218" width="44" height="55" rx="8" fill="white" stroke="#1a1a2e" stroke-width="2.5"/>
+                            <path d="M100 230 L75 255 A5 5 0 0 1 85 260 L142 260" fill="none" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M140 230 L155 245 L160 240" fill="none" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M142 235 Q155 245 168 250" fill="none" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+                            <circle cx="110" cy="186" r="2.5" fill="#1a1a2e"/>
+                            <circle cx="130" cy="186" r="2.5" fill="#1a1a2e"/>
+                            <path d="M114 198 Q120 204 126 198" fill="none" stroke="#1a1a2e" stroke-width="1.8" stroke-linecap="round"/>
+                            <circle cx="104" cy="194" r="3" fill="rgba(244,114,182,0.2)"/>
+                            <circle cx="136" cy="194" r="3" fill="rgba(244,114,182,0.2)"/>
+                            <rect x="155" y="255" width="50" height="14" rx="3" fill="#f1f1f5" stroke="#1a1a2e" stroke-width="1.5"/>
+                            <rect x="160" y="259" width="40" height="6" rx="1" fill="rgba(99,102,241,0.1)"/>
+                        </svg>
                     </div>
                 </div>
             </div>
 
-            <!-- 工作经历 -->
-            <div id="tab-career" class="tab-panel">
-                <!-- 快手CSR -->
-                <div class="content-card job-card current">
-                    <span class="job-badge">当前在职</span>
-                    <div class="job-header">
-                        <img class="job-logo" src="https://img.kuaishou.com/kos/nlav10360/static/img/icon.png" alt="快手" onerror="this.style.display='none'">
+            <!-- ===== 教育背景 ===== -->
+            <div class="panel" id="panel-education">
+                <div class="edu-section">
+                    <h2>华北理工大学</h2>
+                    <p class="edu-sub">新能源科学与工程 · 本科 · 2019 — 2023</p>
+                    <div class="edu-scores">
+                        <span class="score-label">核心能力指标</span>
+                        <div class="score-list">
+                            <span class="score">项目策划与执行 <em>90+篇</em></span>
+                            <span class="score">内容运营审核 <em>78条</em></span>
+                            <span class="score">品牌传播设计 <em>7个H5</em></span>
+                            <span class="score">跨部门协作 <em>4方联合</em></span>
+                            <span class="score">数据复盘 <em>294篇</em></span>
+                            <span class="score">预算优化 <em>30%</em></span>
+                            <span class="score">基金会评级 <em>90%</em></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 工作经历 ===== -->
+            <div class="panel" id="panel-career">
+                <div class="job current">
+                    <div class="job-top">
+                        <img src="https://img.kuaishou.com/kos/nlav10360/static/img/icon.png" alt="快手" onerror="this.style.display='none'">
                         <div>
                             <h3>快手科技 · 企业社会责任部</h3>
-                            <p class="job-role">项目助理 · 2023.8 — 至今</p>
+                            <p class="job-title">快手公益基金会 · 项目助理</p>
+                            <p class="job-date">2023.08 — 至今</p>
                         </div>
                     </div>
-                    <div class="job-body">
-                        <h4>📋 非遗传习学堂（核心项目）</h4>
-                        <ul>
-                            <li>连接非遗传承人与基层社区，让非遗技艺可持续传承</li>
-                            <li>青海、甘肃、山西三省累计开课，覆盖101个基层学校/社区</li>
-                            <li>品牌物料：专题页设计、物料包设计、传播汇总</li>
-                            <li>项目评估报告 + 归档材料整理 + 感谢信</li>
-                        </ul>
-                        <h4>📡 老铁帮老铁（2026重点品牌项目）</h4>
-                        <ul>
-                            <li>快手公益2026年重点社区互助行动——连接「有经验的人」和「有需要的人」</li>
-                            <li>4月公益×三农 农技分享月：75条应征稿件，20位达人邀约</li>
-                            <li>吉林农科院专家直播答疑：单场21.3万观众（增长70倍+）</li>
-                            <li>5月公益×剧情征稿活动：预期曝光增量5亿</li>
-                        </ul>
-                        <h4>🏆 成果</h4>
-                        <div class="result-grid">
-                            <div class="result-num"><em>556节</em><span>非遗开课</span></div>
-                            <div class="result-num"><em>101个</em><span>覆盖学校/社区</span></div>
-                            <div class="result-num"><em>17915</em><span>惠及人次</span></div>
-                            <div class="result-num"><em>4.5亿+</em><span>话题曝光增量</span></div>
-                            <div class="result-num"><em>2000万+</em><span>优质内容VV</span></div>
-                            <div class="result-num"><em>21.3万</em><span>直播峰值观众</span></div>
+                    <div class="job-content">
+                        <div class="job-section">
+                            <h5>非遗传习学堂</h5>
+                            <p>连接非遗传承人与基层社区，让非遗技艺可持续传承。青海、甘肃、山西三省累计开课，覆盖101个基层学校/社区。</p>
                         </div>
-                        <div class="job-note">
-                            <p>预算优化30%（原5w→实际3.5w），建立4方联合风控流程（CSR+剧情PR+CSR PR+舆情）。首期话题#老铁帮老铁 播放量已突破22亿。</p>
+                        <div class="job-section">
+                            <h5>老铁帮老铁</h5>
+                            <p>快手公益2026年重点社区互助行动——连接「有经验的人」和「有需要的人」。4月公益×三农 农技分享月，吉林农科院专家直播答疑。</p>
                         </div>
+                        <div class="job-nums">
+                            <div class="num"><strong>556节</strong><small>非遗开课</small></div>
+                            <div class="num"><strong>101个</strong><small>覆盖学校/社区</small></div>
+                            <div class="num"><strong>17915</strong><small>惠及人次</small></div>
+                            <div class="num"><strong>4.5亿+</strong><small>话题曝光增量</small></div>
+                            <div class="num"><strong>21.3万</strong><small>直播峰值观众</small></div>
+                            <div class="num"><strong>22亿</strong><small>老铁帮老铁</small></div>
+                        </div>
+                        <p class="job-note">预算优化30%（原5w→实际3.5w），建立4方联合风控流程（CSR+剧情PR+CSR PR+舆情）。首期话题#老铁帮老铁 播放量已突破22亿。</p>
                     </div>
                 </div>
 
-                <!-- 启智未来学堂 -->
-                <div class="content-card job-card">
-                    <div class="job-header">
+                <div class="job">
+                    <div class="job-top">
                         <div>
                             <h3>启智未来学堂 / AI兴趣课</h3>
-                            <p class="job-role">2024 — 2025</p>
+                            <p class="job-title">快手公益 · 数字教育实践</p>
+                            <p class="job-date">2024 — 2025</p>
                         </div>
                     </div>
-                    <div class="job-body">
-                        <h4>🧠 AI兴趣课落地</h4>
-                        <ul>
-                            <li>快手公益联合员工志愿者，面对面给学生上AI兴趣课，让乡村孩子通过AI感受更大的世界</li>
-                            <li>山东夏蔚镇中心小学：揭牌仪式+数字教育实践基地挂牌+AI兴趣课体验</li>
-                            <li>甘肃会宁可灵AI课堂：完整方案+复盘</li>
-                            <li>青海官亭镇小学公益行 + 数字教室建设</li>
-                        </ul>
-                        <h4>🏆 成果</h4>
-                        <div class="result-grid">
-                            <div class="result-num"><em>1:3</em><span>志愿者互动比例</span></div>
-                            <div class="result-num"><em>120min</em><span>全流程互动</span></div>
-                            <div class="result-num"><em>3场</em><span>线下公益行</span></div>
+                    <div class="job-content">
+                        <div class="job-section">
+                            <h5>AI兴趣课落地</h5>
+                            <p>快手公益联合员工志愿者，面对面给学生上AI兴趣课，让乡村孩子通过AI感受更大的世界。山东夏蔚镇、甘肃会宁、青海官亭镇。</p>
+                        </div>
+                        <div class="job-nums">
+                            <div class="num"><strong>1:3</strong><small>志愿者互动比例</small></div>
+                            <div class="num"><strong>120min</strong><small>全流程互动</small></div>
+                            <div class="num"><strong>3场</strong><small>线下公益行</small></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- CSR品牌传播 -->
-                <div class="content-card job-card">
-                    <div class="job-header">
+                <div class="job">
+                    <div class="job-top">
                         <div>
                             <h3>CSR品牌传播</h3>
-                            <p class="job-role">2024 — 2026</p>
+                            <p class="job-title">品牌传播与设计统筹</p>
+                            <p class="job-date">2024 — 2026</p>
                         </div>
                     </div>
-                    <div class="job-body">
-                        <h4>🎨 品牌传播与设计统筹</h4>
-                        <ul>
-                            <li>7个H5专题页全链路：设计→搭建→维护</li>
-                            <li>14份主K及延展设计物料产出</li>
-                            <li>幸福大讲堂项目专题片分镜脚本</li>
-                            <li>非遗传习学堂第二期物料包+专题页设计</li>
-                            <li>老铁帮老铁品牌物料统筹</li>
-                        </ul>
-                        <h4>🏆 成果</h4>
-                        <div class="result-grid">
-                            <div class="result-num"><em>7个</em><span>H5专题页</span></div>
-                            <div class="result-num"><em>14份</em><span>设计物料</span></div>
-                            <div class="result-num"><em>12+</em><span>独立项目</span></div>
+                    <div class="job-content">
+                        <div class="job-section">
+                            <h5>品牌传播与设计统筹</h5>
+                            <p>7个H5专题页全链路：设计→搭建→维护。14份主K及延展设计物料产出。幸福大讲堂项目专题片分镜脚本。</p>
+                        </div>
+                        <div class="job-nums">
+                            <div class="num"><strong>7个</strong><small>H5专题页</small></div>
+                            <div class="num"><strong>14份</strong><small>设计物料</small></div>
+                            <div class="num"><strong>12+</strong><small>独立项目</small></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 核心能力 -->
-            <div id="tab-skills" class="tab-panel">
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <span class="sk-icon">📋</span>
-                        <h3>项目策划与执行</h3>
+            <!-- ===== 核心能力 ===== -->
+            <div class="panel" id="panel-skills">
+                <div class="skill-grid">
+                    <div class="skill">
+                        <span class="skill-num">01</span>
+                        <h4>项目策划与执行</h4>
                         <p>活动方案撰写→全周期管理→复盘沉淀，90+篇文档系统化输出</p>
-                        <div class="sk-tags">
-                            <span>方案撰写</span><span>全周期管理</span><span>复盘沉淀</span><span>OKR制定</span>
-                        </div>
                     </div>
-                    <div class="skill-card">
-                        <span class="sk-icon">🎯</span>
-                        <h3>内容运营与审核</h3>
+                    <div class="skill">
+                        <span class="skill-num">02</span>
+                        <h4>内容运营与审核</h4>
                         <p>选题池搭建、视频内容筛选、封面把控、话题页运营</p>
-                        <div class="sk-tags">
-                            <span>选题池</span><span>内容筛选</span><span>封面把控</span><span>话题运营</span>
-                        </div>
                     </div>
-                    <div class="skill-card">
-                        <span class="sk-icon">🎨</span>
-                        <h3>品牌传播与设计统筹</h3>
+                    <div class="skill">
+                        <span class="skill-num">03</span>
+                        <h4>品牌传播与设计统筹</h4>
                         <p>H5专题页全链路、设计需求管理、品牌物料产出、直播支持</p>
-                        <div class="sk-tags">
-                            <span>H5搭建</span><span>设计统筹</span><span>物料产出</span><span>直播支持</span>
-                        </div>
                     </div>
-                    <div class="skill-card">
-                        <span class="sk-icon">👥</span>
-                        <h3>跨部门协作沟通</h3>
+                    <div class="skill">
+                        <span class="skill-num">04</span>
+                        <h4>跨部门协作沟通</h4>
                         <p>三农/剧情垂类、PR风控、专家直播联动、4方联合风控流程</p>
-                        <div class="sk-tags">
-                            <span>跨部门协同</span><span>达人邀约</span><span>风控流程</span><span>专家对接</span>
-                        </div>
                     </div>
-                    <div class="skill-card">
-                        <span class="sk-icon">📊</span>
-                        <h3>数据分析与复盘</h3>
+                    <div class="skill">
+                        <span class="skill-num">05</span>
+                        <h4>数据分析与复盘</h4>
                         <p>直播数据追踪、VV/曝光统计、ROI量化、预算优化</p>
-                        <div class="sk-tags">
-                            <span>数据追踪</span><span>ROI量化</span><span>预算优化</span><span>复盘报告</span>
-                        </div>
                     </div>
-                    <div class="skill-card">
-                        <span class="sk-icon">🤖</span>
-                        <h3>AI工具应用</h3>
+                    <div class="skill">
+                        <span class="skill-num">06</span>
+                        <h4>AI 工具应用</h4>
                         <p>熟练掌握各类AI工具，持续探索AI在公益领域的创新应用</p>
-                        <div class="sk-tags">
-                            <span>AI生图</span><span>Remotion视频</span><span>Docs同步</span><span>内容创作</span>
-                        </div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-num">07</span>
+                        <h4>专业能力</h4>
+                        <p>项目策划、内容运营、品牌传播一体化能力，精通"内容+活动+传播"打法</p>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-num">08</span>
+                        <h4>组织能力</h4>
+                        <p>跨部门协同、达人资源对接、4方联合风控、大型线下活动执行</p>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-num">09</span>
+                        <h4>性格品质</h4>
+                        <p>自我驱动力强、认真细心、优秀的独立学习和工作能力</p>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-num">10</span>
+                        <h4>综合素养</h4>
+                        <p>从项目策划到内容运营再到品牌传播，拥有系统化视角与落地执行力</p>
                     </div>
                 </div>
             </div>
 
-            <!-- 工作理念 -->
-            <div id="tab-eval" class="tab-panel">
-                <div class="eval-cards">
-                    <div class="eval-card2">
-                        <span class="ev-icon">🎯</span>
-                        <h3>连接善意</h3>
-                        <p>连接有经验的人与有需要的人，让普通人的善意产生真实帮助</p>
+            <!-- ===== 学习与探索 ===== -->
+            <div class="panel" id="panel-explore">
+                <div class="explore-grid">
+                    <div class="explore">
+                        <h4>📚 公益领域深耕</h4>
+                        <p>深入学习CSR、ESG理念与实践，探索"科技+公益"的创新模式</p>
                     </div>
-                    <div class="eval-card2">
-                        <span class="ev-icon">🤝</span>
-                        <h3>数据驱动</h3>
-                        <p>用数据验证假设，用复盘沉淀经验，294篇文档系统化管理</p>
+                    <div class="explore">
+                        <h4>🤖 AI 赋能工作流</h4>
+                        <p>探索AI工具在内容创作、数据分析、项目管理等场景的应用，提升工作效率与产出质量</p>
                     </div>
-                    <div class="eval-card2">
-                        <span class="ev-icon">🔥</span>
-                        <h3>内容为本</h3>
-                        <p>内容是连接的媒介，质量是信任的基础，善意循环持续深耕</p>
+                    <div class="explore">
+                        <h4>🎨 品牌审美积累</h4>
+                        <p>持续关注公益品牌传播案例、H5设计趋势，保持对内容美学的敏感度</p>
                     </div>
-                    <div class="eval-card2">
-                        <span class="ev-icon">📈</span>
-                        <h3>系统化管理</h3>
-                        <p>从方案撰写到项目推进到复盘沉淀，全链路系统化输出</p>
+                    <div class="explore">
+                        <h4>🌐 行业视野拓展</h4>
+                        <p>关注互联网平台社会责任、乡村振兴、公益传播等前沿议题，参与行业交流</p>
                     </div>
                 </div>
             </div>
         </main>
     </div>
 
-    <script src="script.js" defer></script>
+    <script src="script.js?v=2"></script>
 </body>
 </html>
