@@ -53,11 +53,21 @@ body {
 .about-photo { flex-shrink: 0; width: 320px; }
 .line-art {
     width: 320px; height: 420px; border-radius: var(--radius);
+    /* 融入背景，无阴影无边框 */
 }
 
 /* ===== 教育背景 ===== */
+.edu-header { display: flex; gap: 1.2rem; align-items: center; margin-bottom: 1rem; }
+.edu-logo { width: 60px; height: 60px; object-fit: contain; flex-shrink: 0; }
+.edu-header h2 { margin: 0; line-height: 1.2; }
+.edu-header .edu-sub { margin: 0; }
 .edu-section h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 0.25rem; }
 .edu-sub { font-size: 0.92rem; color: var(--text-mid); margin-bottom: 1rem; }
+.edu-tags { display: flex; gap: 0.6rem; margin-bottom: 1.5rem; }
+.edu-tags span {
+    font-size: 0.82rem; padding: 0.3rem 0.8rem; border-radius: 22px;
+    background: var(--accent-light); color: var(--accent); border: 1px solid rgba(99,102,241,0.2);
+}
 .edu-scores {
     background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem 1.5rem;
 }
@@ -66,18 +76,66 @@ body {
 .score { font-size: 0.9rem; color: var(--text-mid); }
 .score em { font-style: normal; color: var(--accent); font-weight: 700; }
 
+/* 校内实践 */
+.campus-section { margin-top: 2rem; }
+.campus-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+    border-left: 3px solid var(--accent); padding: 1.5rem;
+}
+.campus-header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin: 0.6rem 0 0.8rem; }
+.campus-header h4 { font-size: 1rem; font-weight: 700; }
+.campus-date { font-size: 0.78rem; color: var(--text-light); white-space: nowrap; }
+.campus-card > p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 0.8rem; }
+.campus-stats { display: flex; flex-wrap: wrap; gap: 0.4rem 2rem; margin-bottom: 0.6rem; }
+.campus-note { font-size: 0.85rem; color: var(--text-light); line-height: 1.7; margin-bottom: 0 !important; }
+
+/* 校园作品 */
+.campus-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.6rem 0 0.8rem; }
+.campus-tag {
+    font-size: 0.72rem; font-weight: 600; color: var(--accent);
+    background: var(--accent-light); border-radius: 6px; padding: 0.2rem 0.65rem;
+}
+.campus-works { display: flex; flex-direction: column; gap: 0.6rem; }
+.campus-work {
+    display: flex; align-items: center; gap: 0.6rem;
+    text-decoration: none; color: var(--text-mid);
+    padding: 0.6rem 0; border-bottom: 1px solid var(--border);
+    transition: color 0.2s;
+}
+.campus-work:last-child { border-bottom: none; }
+.campus-work:hover { color: var(--accent); }
+.campus-work:hover .work-arrow { opacity: 1; transform: translateX(0); }
+.work-type {
+    font-size: 0.72rem; font-weight: 600; color: var(--text-light);
+    text-transform: uppercase; letter-spacing: 0.04em; min-width: 64px;
+}
+.work-title { font-size: 0.95rem; font-weight: 600; flex: 1; }
+.work-arrow {
+    font-size: 0.85rem; color: var(--accent); opacity: 0;
+    transform: translateX(-4px); transition: all 0.2s;
+}
+
 /* ===== 工作经历 ===== */
 .job { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); }
 .job:last-child { border-bottom: none; margin-bottom: 0; }
 .job-top { display: flex; gap: 1.2rem; align-items: center; margin-bottom: 1.2rem; }
 .job-top img { width: 46px; height: 46px; border-radius: 12px; object-fit: contain; background: var(--accent-light); padding: 4px; }
-.job-top h3 { font-size: 1.2rem; font-weight: 700; }
+.job-top h3 { font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; }
+.intern-badge {
+    font-size: 0.65rem; font-weight: 600; color: var(--accent); background: var(--accent-light);
+    padding: 0.15rem 0.5rem; border-radius: 4px; letter-spacing: 0.04em;
+}
 .job-title { font-size: 0.88rem; color: var(--text-mid); }
 .job-date { font-size: 0.8rem; color: var(--text-light); }
 .job-content { padding-left: 3.6rem; }
-.job-section { margin-bottom: 1rem; }
-.job-section h5 { font-size: 0.8rem; font-weight: 700; color: var(--accent); margin-bottom: 0.2rem; text-transform: uppercase; letter-spacing: 0.04em; }
-.job-section p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.8; }
+.job-section { margin-bottom: 1.4rem; }
+.job-section h5 {
+    font-size: 0.85rem; font-weight: 700; color: var(--text);
+    margin-bottom: 0.4rem; padding-left: 0.75rem; border-left: 3px solid var(--accent);
+    line-height: 1.4;
+}
+.job-section p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.85; }
+.p-num { color: var(--accent); font-weight: 700; margin-right: 0.3rem; }
 .job-nums { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1rem; }
 .num {
     background: var(--text); color: white; border-radius: 12px;
@@ -87,14 +145,49 @@ body {
 .num small { font-size: 0.66rem; opacity: 0.7; }
 .job-note { font-size: 0.85rem; color: var(--text-light); line-height: 1.7; }
 
-/* ===== 技能特长 ===== */
-.skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-.skill-num {
-    font-size: 0.72rem; font-weight: 800; color: var(--accent); display: block;
-    margin-bottom: 0.35rem; letter-spacing: 0.05em;
+/* 工作板块分割、活动图片、成果卡片 */
+.content-divider {
+    font-size: 0.7rem; font-weight: 700; color: var(--accent); text-transform: uppercase;
+    letter-spacing: 0.1em; margin: 2rem 0 1rem; display: flex; align-items: center; gap: 0.6rem;
 }
-.skill h4 { font-size: 0.98rem; font-weight: 700; margin-bottom: 0.35rem; }
-.skill p { font-size: 0.86rem; color: var(--text-mid); line-height: 1.65; }
+.content-divider::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+}
+.photo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; margin-bottom: 1.2rem; }
+.photo-placeholder {
+    aspect-ratio: 3 / 2; background: var(--bg); border: 1.5px dashed var(--border);
+    border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.4rem; cursor: pointer; transition: all 0.25s;
+}
+.photo-placeholder:hover { border-color: var(--accent); background: var(--accent-light); }
+.photo-icon { font-size: 1.6rem; opacity: 0.3; }
+.photo-hint { font-size: 0.68rem; color: var(--text-light); }
+.result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.result-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.4rem; transition: box-shadow 0.25s, transform 0.25s;
+}
+.result-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.06); transform: translateY(-2px); }
+.result-card h5 { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--accent); }
+.result-card p { font-size: 0.84rem; color: var(--text-mid); line-height: 1.75; }
+
+/* ===== 技能特长 ===== */
+.skill-cat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+.skill-cat {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.5rem; transition: box-shadow 0.25s;
+}
+.skill-cat:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.05); }
+.skill-cat-head { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem; }
+.skill-cat-icon { font-size: 1.3rem; }
+.skill-cat-head h3 { font-size: 1rem; font-weight: 800; }
+.skill-tag {
+    display: inline-block; font-size: 0.7rem; font-weight: 700; color: var(--accent);
+    background: var(--accent-light); padding: 0.15rem 0.6rem; border-radius: 5px;
+    margin-bottom: 0.3rem;
+}
+.skill-cat-body p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 1rem; }
+.skill-cat-body p:last-child { margin-bottom: 0; }
 
 /* ===== 学习与探索 ===== */
 .explore-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
@@ -116,8 +209,10 @@ body {
     .about-photo { width: 240px; margin: 0 auto; }
     .line-art { width: 240px; height: 320px; }
     .about-text h1 { font-size: 2.4rem; }
-    .skill-grid, .explore-grid { grid-template-columns: 1fr; }
+    .skill-cat-grid, .explore-grid { grid-template-columns: 1fr; }
     .job-content { padding-left: 0; }
     .job-nums { gap: 0.5rem; }
     .num { min-width: 70px; padding: 0.5rem 0.7rem; }
+    .photo-grid { grid-template-columns: repeat(2, 1fr); }
+    .result-grid { grid-template-columns: 1fr; }
 }
